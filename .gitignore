@@ -1,17 +1,25 @@
+# Python
 __pycache__/
+*.py[cod]
+
+# Jupyter
 .ipynb_checkpoints/
-*.pyc
-*.pyo
-*.pyd
 
-.env
-.venv
+# Virtual environments
 venv/
+.venv/
+env/
 
+# OS files
 .DS_Store
 Thumbs.db
 
+# IDE
+.vscode/
+.idea/
+
+# Logs
 *.log
 
-results/*.png
-results/*.jpg
+# Temporary files
+*.tmp
