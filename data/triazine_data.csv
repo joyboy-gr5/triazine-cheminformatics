@@ -1,0 +1,13 @@
+compound_id,compound_name,smiles
+Tz-Ph,"3-phenyl-5,6-dimethyl-1,2,4-triazine",Cc1nnc(nc1(C))c2ccccc2
+Tz-2OH,"3-(2-hydroxyphenyl)-5,6-dimethyl-1,2,4-triazine",Cc1nnc(nc1(C))c2ccccc2O
+Tz-4Cl,"3-(4-chlorophenyl)-5,6-dimethyl-1,2,4-triazine",Cc1nnc(nc1(C))c2ccc(Cl)cc2
+Tz-tBu,"3-(4-tert-butylphenyl)-5,6-dimethyl-1,2,4-triazine",Cc1nnc(nc1(C))c2ccc(C(C)(C)C)cc2
+Tz-4NO2,"3-(4-nitrophenyl)-5,6-dimethyl-1,2,4-triazine",Cc1nnc(nc1(C))c2ccc([N+](=O)[O-])cc2
+Tz-4OH,"3-(4-hydroxyphenyl)-5,6-dimethyl-1,2,4-triazine",Cc1nnc(nc1(C))c2ccc(O)cc2
+Tz-2Cl,"3-(2-chlorophenyl)-5,6-dimethyl-1,2,4-triazine",Cc1nnc(nc1(C))c2ccccc2Cl
+Tz-4Py,"3-(4-pyridyl)-5,6-dimethyl-1,2,4-triazine",Cc1nnc(nc1(C))c2ccncc2
+Tz-2Py,"3-(2-pyridyl)-5,6-dimethyl-1,2,4-triazine",Cc1nnc(nc1(C))c2ncccc2
+Bis-Tz,"2,6-bis-(5,6-dimethyl-1,2,4-triazinyl)pyridine", CC1=NC(C2=NC(C3=NC(C)=C(C)N=N3)=CC=C2)=NN=C1C
+Tris-Tz,"1,3,5-tris-(5,6-dimethyl-1,2,4-triazinyl)benzene",CC1=C(C)N=NC(C2=CC(C3=NN=C(C)C(C)=N3)=CC(C4=NC(C)=C(C)N=N4)=C2)=N1
+Thio-Tz,"3-(5-chlorothiophenyl)-5,6-dimethyl-1,2,4-triazine",CC1=NC(C2=CC=C(Cl)S2)=NN=C1C
