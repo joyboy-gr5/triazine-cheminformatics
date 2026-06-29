@@ -44,15 +44,15 @@ triazine-cheminformatics/
 
 ## Current Progress
 
-- ✅ Descriptor calculation using RDKit
-- ✅ Molecular fingerprints (Morgan Fingerprints)
-- ✅ Tanimoto similarity analysis
-- ✅ Similarity matrix generation
-- ✅ PCA visualization
-- ✅ Hierarchical clustering
-- ✅ Compound ranking
-- ✅ PubChem hydrazide library preparation
-- ✅ Drug-like filtering of aromatic hydrazides
+-  Descriptor calculation using RDKit
+-  Molecular fingerprints (Morgan Fingerprints)
+-  Tanimoto similarity analysis
+-  Similarity matrix generation
+-  PCA visualization
+-  Hierarchical clustering
+-  Compound ranking
+-  PubChem hydrazide library preparation
+-  Drug-like filtering of aromatic hydrazides
 
 Current filtered library:
 
