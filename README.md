@@ -84,7 +84,7 @@ Current filtered library:
 ---
 ## Chemical Space Visualization
 
-![PCA](results/figures/pca_plot.png)
+![PCA](figures/pca_plot.png)
 
 ---
 
