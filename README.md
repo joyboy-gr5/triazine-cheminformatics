@@ -82,6 +82,11 @@ Current filtered library:
 - QSPR modelling
 
 ---
+## Chemical Space Visualization
+
+![PCA](results/figures/pca_plot.png)
+
+---
 
 ## Author
 Ajay K
