@@ -27,16 +27,15 @@ The ultimate goal is to accelerate the discovery of synthetically accessible tri
 The virtual reaction implemented in this repository is based on our experimentally validated one-pot synthesis.
 
 ```
-Hydrazide
-      +
-2,3-Butanedione
-      +
-NH4OAc
-          │
-      DMF, 110 °C
-          ▼
-3-Substituted
-5,6-Dimethyl-1,2,4-Triazine
+               Hydrazide
+                   +
+             2,3-Butanedione
+                   +
+                 NH4OAc
+                   │
+               DMF, 110 °C
+                   ▼
+3-Substituted-5,6-Dimethyl-1,2,4-Triazine
 ```
 
 ---
