@@ -4,15 +4,16 @@ A cheminformatics workflow for the design, analysis, and virtual screening of tr
 
 ## Project Overview
 
-This project aims to combine synthetic organic chemistry with cheminformatics to prioritize novel triazine derivatives before synthesis.
+This project aims to combine synthetic organic chemistry with cheminformatics to prioritize novel and metal sensing triazine derivatives before synthesis.
 
 The workflow includes:
 
-- Molecular descriptor calculation
-- Structural similarity analysis
+- Molecular descriptor calculation of synthesized derivatives 
+- Structural similarity analysis of them
 - Chemical space visualization
-- Compound prioritization
+- Compound prioritization 
 - Virtual screening of aromatic hydrazides from PubChem
+- Virtual One-Pot 1,2,4-triazine synthesis and filtering it using lipinski's rule.
 - Selection of promising candidates for future triazine synthesis
 
 ---
@@ -30,7 +31,7 @@ triazine-cheminformatics/
 │   ├── 01_descriptor_calculation.ipynb
 │   ├── 02_priority_scoring.ipynb
 │   ├── 03_similarity_analysis.ipynb
-│   ├── 04_Virtual_Library_Generation_and_Screening.ipynb
+│   ├── 04_
 │
 ├── results/
 │   ├── descriptors.csv
@@ -53,10 +54,13 @@ triazine-cheminformatics/
 -  Compound ranking
 -  PubChem hydrazide library preparation
 -  Drug-like filtering of aromatic hydrazides
-
+-  Virtual One-Pot synthesis of 1,2,4-triazine 
+from the filtered hydrazide library.
+-  Drug-like filtering of synthesized triazines
 Current filtered library:
 
-**6855 aromatic hydrazides**
+**10000 hydrazide from pubchem*** ---> **6855 aromatic hydrazides**
+
 
 ---
 
@@ -74,8 +78,7 @@ Current filtered library:
 
 ## Future Work
 
-- SMARTS-based functional group annotation
-- Virtual triazine generation
+- prioritizing triazines for Metal sensing application 
 - Chemical diversity selection
 - Novelty analysis
 - Machine learning models
