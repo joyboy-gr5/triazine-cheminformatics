@@ -14,11 +14,61 @@ The ultimate goal is to accelerate the discovery of synthetically accessible tri
 
 ---
 
+## 🚀 Project Highlights
+
+- Curated **10,000+ PubChem hydrazides** into a high-quality aromatic hydrazide library.
+- Developed a **reaction-aware virtual synthesis pipeline** to enumerate 1,2,4-triazine derivatives using an experimentally validated one-pot cyclization.
+- Generated **5,039 virtual triazines** from curated hydrazides.
+- Applied **Lipinski's Rule of Five**, yielding a drug-like virtual library.
+- Removed reaction-incompatible molecules containing additional hydrazine/acyl hydrazide functionalities.
+- Annotated the library using **PAINS, Brenk, NIH, and ZINC structural alerts**.
+- Evaluated **Synthetic Accessibility (SA Score)** for every compound.
+- Final curated library contains **4,982 reaction-compatible, drug-like triazines**.
+- Identified **119 virtual analogues** containing the same **2-hydroxy substitution pattern** as the experimentally synthesized lead compounds.
+
+---
+
 # Workflow
 
-<p align="center">
-<img src="figures/workflow.png" width="900">
-</p>
+## Workflow
+
+```text
+10,000+ PubChem Hydrazides
+            │
+            ▼
+Data Curation
+• Remove invalid structures
+• Remove salts and charged species
+• Keep aromatic hydrazides
+            │
+            ▼
+Reaction Enumeration
+Virtual one-pot synthesis
+Hydrazide → 1,2,4-Triazine
+            │
+            ▼
+Drug-likeness Filtering
+• Lipinski Rule of Five
+            │
+            ▼
+Reaction-specific Filtering
+• Remove residual hydrazine/acyl hydrazide motifs
+            │
+            ▼
+Structural Quality Assessment
+• PAINS
+• Brenk
+• NIH
+• ZINC
+            │
+            ▼
+Synthetic Feasibility
+• Synthetic Accessibility (SA Score)
+            │
+            ▼
+Final Curated Library
+4,982 Virtual Triazines
+```
 
 ---
 
@@ -37,18 +87,6 @@ The virtual reaction implemented in this repository is based on our experimental
                    ▼
 3-Substituted-5,6-Dimethyl-1,2,4-Triazine
 ```
-
----
-
-# Project Statistics
-
-| Stage | Molecules |
-|--------|----------:|
-| Raw PubChem hydrazides | ~10,000 |
-| Curated aromatic hydrazides | **5,971** |
-| Mono-triazine derivatives | **4,981** |
-| Bis-triazine derivatives | **58** |
-| Total virtual triazine library | **5,039** |
 
 ---
 
@@ -172,22 +210,25 @@ A dedicated notebook investigates the applicability of selected virtual triazine
 
 ---
 
-# Current Status
+## Current Status
 
-✅ Hydrazide curation
+- Virtual reaction engine completed
 
-✅ Virtual reaction generation
+- Library curation completed
 
-✅ Descriptor calculation
+- Drug-likeness filtering completed
 
-✅ Lipinski filtering
+- Structural alert annotation completed
 
-✅ Similarity analysis
+- Synthetic accessibility analysis completed
 
-✅ Priority scoring
+🔄 Next Steps
 
-✅ Metal sensing analysis
-
+- Quantitative Estimate of Drug-likeness (QED)
+- Chemical diversity analysis
+- Bemis–Murcko scaffold analysis
+- Similarity search against synthesized compounds
+- Multi-parameter compound prioritization
 ---
 
 # Future Work
@@ -198,6 +239,7 @@ A dedicated notebook investigates the applicability of selected virtual triazine
 - Synthetic accessibility scoring
 - Biological activity prediction
 - Experimental validation of prioritized candidates
+- DFT analysis of top molecules
 
 ---
 
