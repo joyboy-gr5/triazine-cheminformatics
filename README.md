@@ -14,7 +14,7 @@ The ultimate goal is to accelerate the discovery of synthetically accessible tri
 
 ---
 
-## 🚀 Project Highlights
+##  Project Highlights
 
 - Curated **10,000+ PubChem hydrazides** into a high-quality aromatic hydrazide library.
 - Developed a **reaction-aware virtual synthesis pipeline** to enumerate 1,2,4-triazine derivatives using an experimentally validated one-pot cyclization.
@@ -107,7 +107,9 @@ TRIAZINE_QSPR_PROJECT
 │   ├── 03_similarity_analysis.ipynb
 │   ├── 04_hydrazide_cleaning.ipynb
 │   ├── 05_virtual_reaction.ipynb
-│   └── 06_metal_sensing_analysis.ipynb
+│   ├── 06_library_triage.ipynb
+│   ├── 07_SA_Scoring.ipynb
+│   └── a_metal_sensing_analysis.ipynb
 │
 ├── results
 │   ├── descriptors.csv
@@ -118,7 +120,8 @@ TRIAZINE_QSPR_PROJECT
 ├── figures
 │   ├── dendrogram.png
 │   ├── pca_plot.png
-│   └── similarity_heat_map.png
+│   ├── similarity_heat_map.png
+│   └── SA_score.png
 │
 └── src
     └── read_data.py
@@ -170,7 +173,6 @@ Virtual compounds were filtered using:
 - Lipinski Rule of Five
 - Molecular descriptors
 - Structural similarity
-
 ---
 
 ### 5. Similarity Analysis
@@ -183,7 +185,7 @@ The virtual library was analyzed using molecular fingerprints and visualized thr
 
 ---
 
-### 6. Scaffold Investigation
+### 6. Scaffold Investigation for metal sensing
 
 A focused search identified
 
@@ -193,9 +195,9 @@ sharing the same **2-hydroxy substitution pattern** as the experimentally synthe
 
 ---
 
-### 7. Metal Sensing Analysis
+### 7. PAIN, Brenk, NIH, Zinc Annotation
 
-A dedicated notebook investigates the applicability of selected virtual triazines toward metal sensing studies.
+A dedicated notebook investigates the quantity of compounds that give these alerts. 
 
 ---
 
@@ -222,7 +224,7 @@ A dedicated notebook investigates the applicability of selected virtual triazine
 
 - Synthetic accessibility analysis completed
 
-🔄 Next Steps
+# Next Steps
 
 - Quantitative Estimate of Drug-likeness (QED)
 - Chemical diversity analysis
@@ -235,9 +237,7 @@ A dedicated notebook investigates the applicability of selected virtual triazine
 
 - QSPR model development
 - ADMET prediction
-- Molecular docking
 - Synthetic accessibility scoring
-- Biological activity prediction
 - Experimental validation of prioritized candidates
 - DFT analysis of top molecules
 
