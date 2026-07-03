@@ -30,8 +30,6 @@ The ultimate goal is to accelerate the discovery of synthetically accessible tri
 
 # Workflow
 
-## Workflow
-
 ```text
 10,000+ PubChem Hydrazides
             │
