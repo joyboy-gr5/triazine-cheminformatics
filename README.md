@@ -65,7 +65,7 @@ Synthetic Feasibility
             │
             ▼
 Final Curated Library
-4,982 Virtual Triazines
+4,951 Virtual Triazines
 ```
 
 ---
@@ -94,32 +94,27 @@ The virtual reaction implemented in this repository is based on our experimental
 TRIAZINE_QSPR_PROJECT
 │
 ├── data
-│   ├── clean_hydrazides.csv
 │   ├── hydrazide_library.csv
-│   ├── triazine_data.csv
-│   └── virtual_triazines_filtered.csv
+│   └── triazine_data.csv
 │
 ├── notebooks
-│   ├── 01_descriptor_calculation.ipynb
-│   ├── 02_priority_scoring.ipynb
-│   ├── 03_similarity_analysis.ipynb
-│   ├── 04_hydrazide_cleaning.ipynb
-│   ├── 05_virtual_reaction.ipynb
-│   ├── 06_library_triage.ipynb
-│   ├── 07_SA_Scoring.ipynb
+│   ├── 01_experimental_compounds.ipynb
+│   ├── 02_hydrazide_cleaning.ipynb
+│   ├── 03_virtual_reaction.ipynb
+│   ├── 04_library_triage.ipynb
+│   ├── 05_SA_Scoring.ipynb
 │   └── a_metal_sensing_analysis.ipynb
 │
 ├── results
-│   ├── descriptors.csv
-│   ├── similarity_matrix.csv
-│   ├── triazine_dataset.csv
-│   └── virtual_triazine_library.csv
-│
-├── figures
-│   ├── dendrogram.png
-│   ├── pca_plot.png
-│   ├── similarity_heat_map.png
-│   └── SA_score.png
+│   ├── clean_hydrazides.csv
+│   ├── exp_dataset.csv
+│   ├── pro_cleaned_triazine.csv
+│   ├── virtual_triazine_filtered.csv
+│   └── figures
+│       ├── PCA.png
+│       ├── QED.png
+│       ├── SA_score.png
+│       └── similarity_matrix.png
 │
 └── src
     └── read_data.py
@@ -139,7 +134,7 @@ TRIAZINE_QSPR_PROJECT
 
 Final curated library:
 
-**5,971 aromatic hydrazides**
+**5,941 aromatic hydrazides**
 
 ---
 
@@ -149,12 +144,12 @@ Each curated hydrazide was computationally transformed into the corresponding **
 
 Generated library:
 
-- **4,981 mono-triazines**
-- **58 bis-triazines**
+- **4,939 mono-triazines**
+- **60 bis-triazines**
 
 Total:
 
-**5,039 virtual triazine derivatives**
+**4,999 virtual triazine derivatives**
 
 ---
 
@@ -187,7 +182,7 @@ The virtual library was analyzed using molecular fingerprints and visualized thr
 
 A focused search identified
 
-**119 virtual triazines**
+**120 virtual triazines**
 
 sharing the same **2-hydroxy substitution pattern** as the experimentally synthesized lead scaffold.
 
