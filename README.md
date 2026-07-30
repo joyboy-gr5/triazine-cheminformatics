@@ -1,176 +1,86 @@
-#  Triazine Cheminformatics Platform
+# Virtual Screening Pipeline for Potential Tridentate 1,2,4-Triazine Ligands for Cu²⁺ Sensing
 
-> **A computational workflow for designing, curating and prioritizing novel 1,2,4-triazine derivatives using an experimentally validated one-pot synthetic strategy.**
-
----
-
-## Overview
-
-This repository presents a complete **cheminformatics pipeline** for the virtual design of **3-substituted 5,6-dimethyl-1,2,4-triazine derivatives**.
-
-Starting from publicly available hydrazides, the workflow performs rigorous structure curation, virtual reaction enumeration based on an experimentally validated one-pot synthesis, molecular descriptor calculation, similarity analysis, and candidate prioritization.
-
-The ultimate goal is to accelerate the discovery of synthetically accessible triazine derivatives for medicinal chemistry and metal sensing applications.
+An end-to-end cheminformatics workflow for the automated discovery and prioritization of potential tridentate 1,2,4-triazine ligands relevant to Cu²⁺ sensing applications. Starting from a virtual hydrazide library, the pipeline performs reaction enumeration, molecular descriptor generation, SMARTS-based donor atom and chelation motif identification, structural filtering, molecular fingerprint similarity analysis using manually curated tridentate ligand scaffolds, and semiempirical quantum chemical calculations (GFN2-xTB) to prioritize candidates based on their structural and electronic properties. The workflow is fully reproducible, modular, and implemented using open-source Python tools, providing a scalable framework for computational ligand discovery.
 
 ---
 
-##  Project Highlights
+# Top Ranked Candidate Molecules
 
-- **High-Throughput Curation:** Standardized and filtered **10,000+ raw PubChem hydrazides** into an electronically pristine aromatic precursor collection.
-- **Reaction-Aware Synthesis:** Developed an in silico chemical transformation framework simulating an experimentally proven one-pot multicomponent cyclization.
-- **Physicochemical Triaging:** Generated **5,039 virtual triazines** subjected to Lipinski’s Rule of Five boundaries to secure highly drug-like chemical spaces.
-- **Coordination-Pocket Screening:** Built structural pincer algorithms tracking donor-atom proximity relative to the triazine core to extract **3,263 metal-coordinating scaffolds.**
-- **Topology & Denticity Pruning:** Filtered out strained, non-planar aliphatic systems, mapping **1,901 aromatic candidates.** Used custom SMARTS strings to capture high-affinity tri- and tetradentate pincer patterns, pruning the set to **183 distinct sensors.**
-- **Tanimoto Similarity Lead Generation:** Screened the high-affinity subspace against targeted lead chemistries using RDKit Morgan Fingerprints to narrow down **30 highly promising candidates.**
-- **Quantum Mechanical Sorting:** Deployed Grimme's semi-empirical tight-binding framework (xTB) to optimize 3D conformers and extract explicit HOMO-LUMO gap topologies, mapping ideal Cu2+ energy decay properties.
+<p align="center">
+  <img src="results/figures/top30_molecules.png" width="95%">
+</p>
+
+*Top 30 candidate tridentate ligands selected after structural filtering, similarity analysis, and quantum chemical screening.*
+
 ---
 
-## Workflow
+# Project Highlights
 
-```text
-       [ 10,000+ Raw Precursors ]
-                    │
-                    ▼ Data Curation & Standardisation
-       [ 5,941 Aromatic Hydrazides ]
-                    │
-                    ▼ Virtual One-Pot Synthesis
-       [ 4,999 Total Enumerated Triazines ] (4,939 Mono- / 60 Bis-Triazines)
-                    │
-                    ▼ Lipinski's Rule of Five Filter
-       [ 4,951 Drug-Like Virtual Molecules ]
-                    │
-                    ▼ Coordination-Pocket Vector Proximity
-       [ 3,263 Core Coordination Scaffolds ]
-                    │
-                    ▼ Geometric Pruning (Aromaticity & Planarity Focus)
-       [ 1,901 Rigid Planar Chelators ]
-                    │
-                    ▼ SMARTS Pattern Identification (Tridentate / Tetradentate Focus)
-       [  183 Pincer Ligand Architectures ]
-                    │
-                    ▼ Fingerprint Similarity Profiling (Morgan / Tanimoto)
-       [   30 High-Priority Sensor Candidates ]
-                    │
-                    ▼ Semi-Empirical Quantum Screening (GFN2-xTB Geometry & Orbitals)
-       [ Target Prioritized Lead Portfolio ]
+- End-to-end automated virtual screening workflow
+- Virtual reaction enumeration of 1,2,4-triazine derivatives
+- SMARTS-based identification of donor atoms and chelation motifs
+- Physicochemical descriptor generation using RDKit
+- Identification of potential tridentate ligand architectures
+- Molecular fingerprint similarity analysis using manually curated reference ligands
+- Semiempirical quantum chemical screening using GFN2-xTB
+- Automated ranking of candidates based on structural and electronic descriptors
+- Modular and reproducible Python workflow
+
+---
+
+# Workflow
 
 ```
----
-
-## Experimental Inspiration
-
-The virtual reaction implemented in this repository is based on our experimentally validated one-pot synthesis.
-
-```
-               Hydrazide
-                   +
-             2,3-Butanedione
-                   +
-                 NH4OAc
-                   │
-               DMF, 110 °C
-                   ▼
-3-Substituted-5,6-Dimethyl-1,2,4-Triazine
-```
-
----
-
-## Repository Structure
-
-```
-TRIAZINE_QSPR_PROJECT
-│
-├── data
-│   ├── hydrazide_library.csv
-│   └── triazine_data.csv
-│
-├── notebooks
-│   ├── 01_experimental_compounds.ipynb
-│   ├── 02_hydrazide_cleaning.ipynb
-│   ├── 03_virtual_reaction.ipynb
-│   ├── Metal_sensing_App.ipynb
-│   └── Quantum_Screening.ipynb
-│
-├── results
-│   ├── clean_hydrazides.csv
-│   ├── exp_dataset.csv
-│   ├── pro_cleaned_triazine.csv
-│   ├── virtual_triazine_filtered.csv
-│   ├── figures
-│   │   ├── PCA.png
-│   │   ├── similarity_matrix.png
-│   │   ├── top_mols.png
-│   │   └── top5_radar.png
-│   ├── metal_sensing_app
-│   │   ├── Metal_sensing_mol.csv
-│   │   └── top_MS_cand.csv
-│   └── quantum_screening_data
-│       ├── xtb_inputs
-│       ├── xtb_outputs
-│       ├── xtb_scratch
-│       └── xtb_baseline_screeing.csv
-│ 
-└── src
-    └── read_data.py
+Hydrazide Library
+        │
+        ▼
+Virtual Reaction Enumeration
+        │
+        ▼
+Molecular Descriptor Generation
+        │
+        ▼
+SMARTS-Based Structural Filtering
+        │
+        ▼
+Donor Atom & Chelation Motif Identification
+        │
+        ▼
+Reference Ligand Similarity Analysis
+        │
+        ▼
+GFN2-xTB Quantum Calculations
+        │
+        ▼
+Candidate Ranking & Visualization
 ```
 
----
-
-# Computational Pipeline
-
-### 1. Hydrazide Library Construction
-
-- PubChem data collection
-- Invalid SMILES removal
-- Hydrazide verification
-- Salt and mixture removal
-- Aromatic compound filtering
-
-Final curated library:
-
-**5,941 aromatic hydrazides**
+*A graphical workflow diagram can be substituted for the above schematic.*
 
 ---
 
-### 2. Virtual Reaction Enumeration
+# Screening Summary
 
-Each curated hydrazide was computationally transformed into the corresponding **3-substituted 5,6-dimethyl-1,2,4-triazine** based on the experimentally validated synthetic reaction.
-
-Generated library:
-
-- **4,939 mono-triazines**
-- **60 bis-triazines**
-
-Total:
-
-**4,999 virtual triazine derivatives**
-
----
-
-### 3. Descriptor Calculation
-
-Molecular descriptors were calculated using RDKit, providing structural and physicochemical properties for downstream analysis.
+| Stage | Description | Molecules Remaining |
+|:------|:------------|-------------------:|
+| Initial Library | Virtual hydrazide library | 10000 |
+| Reaction Enumeration | Virtual 1,2,4-triazine derivatives | 5941 |
+| Structure Validation | RDKit sanitization and validation | 4999 |
+| Descriptor Calculation | Molecular descriptor generation | 4951 |
+| SMARTS Filtering | Identification of donor atom-containing molecules | 3263 |
+| Chelation Screening | Selection of potential tridentate ligand motifs | 1214  |
+| Similarity Analysis | Comparison with manually curated reference ligands | 183 |
+| Quantum Screening | GFN2-xTB electronic property calculations | 30 |
 
 ---
 
-### 4. Candidate Prioritization
+# Reference Ligand Set
 
-Virtual compounds were filtered using:
-
-- Lipinski Rule of Five
-- Molecular descriptors
----
-
-### 5. Metal Sensing Application
-
-To discover an optimal Cu2+ fluorescent "Turn-Off" sensor, the architecture evaluates ligand structures against strict stereochemical and electronic design criteria:
-- **The Spatial Constraint:** Pruned out aliphatic and sterically hindered pathways to allow the triazine pincer to transition into the stable, coplanar cis-cis configuration required for strong chelation.
-- **Hard-Soft Acid-Base (HSAB) Balancing:** Favored borderline nitrogen-rich donor sets matching the borderline acid profile of Cu2+ to drive high thermodynamic binding affinity.
-- **Orbital Quenching Mechanics:** Deployed GFN2-xTB to screen for a targeted optical HOMO-LUMO gap range 1.5 eV - 2.2 eV in the resulting complexes. This narrow gap facilitates non-radiative energy dissipation through direct Ligand-to-Metal Charge Transfer (LMCT) and inner d-d orbital pathways, confirming a highly sensitive optical response. 
+The similarity analysis was performed using a manually curated collection of representative tridentate ligand scaffolds identified during structural inspection of the virtual library. These reference compounds were selected based on their donor atom arrangement and chelation geometry rather than experimentally validated Cu²⁺ sensing activity. Morgan fingerprint similarity was subsequently used to identify structurally related candidates exhibiting comparable coordination motifs for further quantum chemical screening.
 
 ---
 
-## Technologies
+# Technologies
 
 - Python
 - RDKit
@@ -178,34 +88,106 @@ To discover an optimal Cu2+ fluorescent "Turn-Off" sensor, the architecture eval
 - NumPy
 - Matplotlib
 - Jupyter Notebook
-- xtb
+- GFN2-xTB
 
 ---
 
-## Current Status
+# Repository Structure
 
-- Precursor database sanitization and curation engines
-- Multi-component reaction simulation compiler
-- Multi-tier structural filters (Lipinski, Heteroatom Proximity, Aromaticity)
-- Sub-structure SMARTS denticity categorization
-- Semi-empirical (GFN2-xTB) optimization and frontier orbital extraction
-
-## Next Steps
-
-- Ab initio Density Functional Theory (DFT) confirmation for Top 5 systems
-- Integrated ADMET (SwissADME) ADMET profiling
-- Target synthetic accessibility verification score indexing
+```text
+TRIAZINE_METAL_SENSING_PROJECT
+│
+├── data
+│   ├── hydrazide_library.csv
+│   └── reference_compounds.csv
+│
+├── notebooks
+│   ├── 01_hydrazide_cleaning.ipynb
+│   ├── 02_virtual_reaction.ipynb
+│   ├── 03_Metal_sensing_App.ipynb
+│   └── 04_Quantum_Screening.ipynb
+│
+├── results
+│   ├── figures
+│   │   ├── top30_molecules.png
+│   │   └── radar_for_top5.png
+│   │
+│   ├── quantum_screening_data
+│   ├── Metal_sensing_mol.csv
+│   ├── electronic_prop.csv
+│   ├── hydrazides.csv
+│   ├── triazines.csv
+│   └── xtb_baseline_screening.csv
+│
+├── src
+│   └── automated_screening.py
+│
+├── cheminfo.yml
+├── README.md
+└── LICENSE
+```
 
 ---
 
-## Future Work
+# Repository Outputs
 
-- **Quantum Precision Upgrades:** Migrating the top 5 optimized structures into high-accuracy DFT functional frameworks (e.g., B3LYP or M06-2X using ORCA) to calculate exact absorption spectrum changes.
-- **Bench Synthesis Validation:** Subjecting the highest-ranked candidates to our physical, one-pot condensation setup to verify optical Cu2+ sensing properties. 
-- **Multi-Metal Vector Tuning:** Shifting structural parameters on the 4'-position to evolve sensors optimized for different transition metal ions.
+| Output | Description |
+|:-------|:------------|
+| `triazines.csv` | Complete virtual triazine library |
+| `Metal_sensing_mol.csv` | Filtered candidate tridentate ligands |
+| `electronic_prop.csv` | HOMO, LUMO and HOMO–LUMO gap values |
+| `xtb_baseline_screening.csv` | Electronic properties from GFN2-xTB calculations |
+| `top30_molecules.png` | Top-ranked candidate structures |
+| `radar_for_top5.png` | Comparison of normalized molecular and electronic properties of the top five candidates |
 
 ---
 
-## Author
+# Electronic Property Comparison
 
-Ajay K
+<p align="center">
+  <img src="results/figures/radar_for_top5.png" width="90%">
+</p>
+
+*Normalized comparison of molecular descriptors and electronic properties for the five highest-ranked candidate ligands.*
+
+---
+
+# Installation
+
+Clone the repository
+
+```bash
+git clone https://github.com/<username>/TRIAZINE_METAL_SENSING_PROJECT.git
+cd TRIAZINE_METAL_SENSING_PROJECT
+```
+
+Create the environment
+
+```bash
+conda env create -f cheminfo.yml
+conda activate cheminfo
+```
+
+Run the complete workflow
+
+```bash
+python src/automated_screening.py
+```
+
+Alternatively, execute the Jupyter notebooks sequentially to reproduce each stage of the screening pipeline.
+
+---
+
+# Future Work
+
+- Density Functional Theory (DFT) optimization of prioritized ligands
+- Cu²⁺ complex geometry optimization and binding energy calculations
+- Machine learning models for ligand prioritization
+- Extension to additional transition-metal ions
+- Experimental synthesis and validation of selected candidates
+
+---
+
+# License
+
+This project is distributed under the MIT License.
